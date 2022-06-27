@@ -1,15 +1,23 @@
 package com.frank.javamavenestructura;
 
+import com.frank.javamavenestructura.config.*;
 import com.frank.javamavenestructura.controller.*;
 import com.frank.javamavenestructura.dto.*;
+import java.sql.Connection;
 import java.util.List;
 
 public class JavaMavenEstructura {
 
     public static void main(String[] args) {
-        var controller = new ProductTypeController();
-        boolean exito;
+        //var controller = new ProductTypeController();
+        //boolean exito;
         System.out.println("Hola Mundo");
+        Connection con = ORACLEConnection.getConnection();
+        if(con == null){
+            System.out.println("No conectado");
+        }else{
+            System.out.println("Conectado");
+        }
         //MYSQL
         //findAll
         /*List<UserDTO> users = controller.getAll();
@@ -61,14 +69,14 @@ public class JavaMavenEstructura {
         
         //SQLSERVER
         //findAll
-        List<ProductTypeDTO> productTypes = controller.getAll();
+        /*List<ProductTypeDTO> productTypes = controller.getAll();
         if(productTypes != null){
             for(ProductTypeDTO item: productTypes){
                 System.out.println(productTypes.toString());
             }
         }else{
             System.out.println("No hay datos");
-        }
+        }*/
         //findOne
         /*UserDTO user = controller.getOneById("1");
         if(user != null){

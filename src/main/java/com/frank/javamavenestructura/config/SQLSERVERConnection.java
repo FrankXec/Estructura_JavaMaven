@@ -14,7 +14,7 @@ public class SQLSERVERConnection {
             
     public static Connection getConnection(){
         String temUrl = "jdbc:sqlserver://"+ip+":"+port+"/"+dbName;
-        String cadena = "jdbc:sqlserver://DESKTOP-85NKVO2\\SQLEXPRESS:"+port+";"+"databaseName="+dbName+";integratedSecurity=true";
+        String cadena = "jdbc:sqlserver://DESKTOP-85NKVO2\\SQLEXPRESS:"+port+";"+"databaseName="+dbName+";integratedSecurity=false;encrypt=false;trustServerCertificate=false";
         //Conexion
         try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
